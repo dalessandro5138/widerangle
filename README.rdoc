@@ -1,0 +1,13 @@
+== README
+
+Wider Angle Project
+
+This project is in its infant stages but is being built for the following purposes:
+
+* Create a blog site where videos will be posted
+
+* Users will be able to post comments and share videos that they like
+
+
+
+
