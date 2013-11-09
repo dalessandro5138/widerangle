@@ -1,4 +1,5 @@
 WiderAngle::Application.routes.draw do
+  get "pages/home"
   resources :user_posts
 
   resources :users

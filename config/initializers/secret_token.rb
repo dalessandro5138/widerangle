@@ -9,4 +9,16 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WiderAngle::Application.config.secret_key_base = '4dfc61364485195a6095de725694220aaf1c85b08c531c23bb4468d879ac76549d8ee36bc175399a067fcf1ca8cfc6e840763618be76436aa4d997fa5109cc3b'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		File.read(token_file).chomp
+	else
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+
+WiderAngle::Application.config.secret_key_base = secure_token
