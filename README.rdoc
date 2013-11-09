@@ -1,6 +1,6 @@
 == README
 
-Wider Angle Project Site
+Wider Angle Project
 
 This project is in its infant stages but is being built for the following purposes:
 
