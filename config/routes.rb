@@ -1,7 +1,9 @@
 WiderAngle::Application.routes.draw do
-  get "pages/home"
-  get "pages/about"
   
+
+  root "pages#home"
+  match '/about', to: 'pages#about', via: 'get'
+
   resources :user_posts
 
   resources :users
