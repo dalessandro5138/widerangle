@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    bcrypt-ruby (3.1.2)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -146,16 +147,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara
+  bcrypt-ruby (= 3.1.2)
+  capybara (= 2.1.0)
   coffee-rails (= 4.0.0)
   jbuilder (= 1.5.0)
   jquery-rails (= 3.0.4)
   pg (= 0.17.0)
   rails (= 4.0.1)
   rails_12factor (= 0.0.2)
-  rspec-rails
+  rspec-rails (= 2.14.0)
   sass-rails (= 4.0.0)
   sdoc (= 0.3.20)
-  selenium-webdriver
+  selenium-webdriver (= 2.37.0)
   turbolinks (= 1.3.0)
   uglifier (= 2.1.2)
