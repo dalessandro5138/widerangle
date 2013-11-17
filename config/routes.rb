@@ -1,12 +1,12 @@
 WiderAngle::Application.routes.draw do
-  
+  resources :user_posts
+  resources :users
 
   root "pages#home"
   match '/about', to: 'pages#about', via: 'get'
+  match '/signup', to: 'users#new',   via: 'get'
 
-  resources :user_posts
 
-  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

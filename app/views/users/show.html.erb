@@ -1,10 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% provide :title, @user.name %>
 
-<p>
-  <strong>Name:</strong>
+<h1>
+	<%= gravatar_for @user %>
   <%= @user.name %>
-</p>
-
+</h1>
+<p id="notice"><%= notice %></p>
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
