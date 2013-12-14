@@ -1,16 +1,10 @@
 require 'spec_helper'
 
 describe "User pages" do
-	
+	let(:user) { FactoryGirl.create(:user)}
 	subject {page}
 
-	describe "Profile page" do
-		let(:user) { FactoryGirl.create(:user)}
-		before {visit user_path(user)}
 
-		it {should have_content(user.name)}
-		it {should have_title(user.name)}
-	end
 
 	describe "Signup page" do
 		before {visit signup_path}
@@ -27,15 +21,21 @@ describe "User pages" do
 
 		describe "with valid information" do
 			before do
-				fill_in "Name", with: "Someones Name"
-				fill_in "Email", with: "someone@something.com"
+				fill_in "Name", with: "Dan"
+				fill_in "Email", with: "dan@wa.com"
 				fill_in "Password", with: "password"
 				fill_in "Password confirmation", with: "password"
 			end
 
 			it "should create a user" do
-				expect { click_button submit }.to change(User, :count).by(1)
+				expect { click_button submit}.to change(User, :count).by(1)
 			end
 		end
+	end
+
+	describe "Profile page" do
+		before {visit user_path(user)}
+		it {should have_content(user.name)}
+		it {should have_title(user.name)}
 	end
 end

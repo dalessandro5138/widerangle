@@ -10,7 +10,7 @@ development:
   pool: 5
   timeout: 5000
 
-test:
+test: &test
   adapter: postgresql
   host: localhost
 #   #database: app-test
@@ -21,3 +21,6 @@ test:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 
+
+cucumber:
+  <<: *test

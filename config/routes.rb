@@ -1,11 +1,13 @@
 WiderAngle::Application.routes.draw do
   resources :user_posts
   resources :users
-
+  resource :sessions, only: [:new, :create, :destroy]
   root "pages#home"
   match '/about', to: 'pages#about', via: 'get'
   match '/signup', to: 'users#new',   via: 'get'
-
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+  #match '/s'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
